@@ -1,9 +1,11 @@
+
 pipeline {
-  
-  
     agent any
    tools {nodejs "NodeJS"}
+   
     stages{
+       
+     
         stage('Init'){
             steps{
                 script{
