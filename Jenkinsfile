@@ -27,10 +27,10 @@ pipeline {
             steps{
                 script{
                     echo "deploying the application"
-                    withCredentials([usernamePassword(credentialsId:'dockerhub',usernameVariable:'USER',passwordVariable:'PWD')]) {
-                        sh "echo $PWD | docker login -u $USER --password-stdin"
-                        sh "docker build -t haifa123456/angular-app:1.0 ."
-                        sh "docker push haifa123456/angular-app:1.0"
+                   script{
+                        sh 'docker login -u haifa123456 -p haifabrineg'
+                        sh 'docker build -t haifa123456/angular-app:1.0 .'
+                        sh 'docker push haifa123456/angular-app:1.0'
 
                 }
             }
